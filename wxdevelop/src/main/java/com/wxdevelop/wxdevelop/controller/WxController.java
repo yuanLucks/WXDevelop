@@ -6,13 +6,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * @Author:XieYuanYang
+ * @Description: controller
+ * @Date: Created in 17:20 2019/2/18 0018
+ */
 @RestController
 public class WxController {
 
@@ -65,7 +67,6 @@ public class WxController {
             e.printStackTrace();
         }
         */
-
         return sss;
     }
 

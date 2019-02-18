@@ -14,7 +14,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-
+/**
+ * 微信工具类
+ */
 public class EncryptUtli {
 
     /**
@@ -86,7 +88,10 @@ public class EncryptUtli {
         return null;
     }
 
-
+    /**
+     * 随机抽取
+     * @return
+     */
     public static String context(){
         String str1 = "失恋的时候，许多年轻人以为整个世界都抛弃了自己，别傻了，世界根本就没需要过你。";
         String str2 = "许多事不要害怕做错，即使错了，也不必懊恼，人生就是对对错错，回头看来，对错已经无所谓了。";
