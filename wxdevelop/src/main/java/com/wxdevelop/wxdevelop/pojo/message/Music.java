@@ -1,4 +1,4 @@
-package com.wxdevelop.wxdevelop.pojo;
+package com.wxdevelop.wxdevelop.pojo.message;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 

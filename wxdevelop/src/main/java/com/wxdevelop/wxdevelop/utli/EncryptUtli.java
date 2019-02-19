@@ -1,5 +1,6 @@
 package com.wxdevelop.wxdevelop.utli;
 
+import jdk.internal.util.xml.impl.Input;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
@@ -7,6 +8,10 @@ import org.dom4j.io.SAXReader;
 
 import javax.xml.transform.sax.SAXResult;
 import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -18,6 +23,63 @@ import java.util.Random;
  * 微信工具类
  */
 public class EncryptUtli {
+
+    /**
+     * 向指定的地址发送一个post请求，带着data数据
+     * @param url
+     * @param data
+     * @return
+     */
+    public static String post(String url , String data){
+        try {
+            URL urlObj = new URL(url);
+            URLConnection connection = urlObj.openConnection();
+            //要发送数据出去，必须要设置为可发送数据状态
+            connection.setDoOutput(true);
+            OutputStream out = connection.getOutputStream();
+            out.write(data.getBytes());
+            out.close();
+
+            InputStream in = connection.getInputStream();
+            int len;
+            byte[] bytes = new byte[1024];
+            StringBuffer sb = new StringBuffer();
+            while ((len = in.read(bytes)) != -1){
+                sb.append(new String(bytes,0,len));
+            }
+            return sb.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    /**
+     * 向指定的地址发送get请求
+     * @return
+     */
+    public static String get(String url){
+        try {
+            //获取连接对象
+            URL urlObject = new URL(url);
+            //开连接
+            URLConnection connection = urlObject.openConnection();
+
+            InputStream is = connection.getInputStream();
+            byte[] bytes = new byte[1024];
+            int len;
+            StringBuilder sb = new StringBuilder();
+
+            while((len=is.read(bytes))!= -1){
+                sb.append(new String(bytes,0,len));
+            }
+
+            return sb.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     /**
      * sha1加密

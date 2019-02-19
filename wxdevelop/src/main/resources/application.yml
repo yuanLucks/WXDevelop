@@ -1,5 +1,5 @@
 wechat:
-  mpAppId:
-  mpAppSecret:
+  mpAppId: wxfcf12446d226e32d
+  mpAppSecret: 0d59de8f03d7a099f034e8fa3a3bff8e
   grantType: authorization_code
   requestUrl: https://api.weixin.qq.com/sns/jscode2session

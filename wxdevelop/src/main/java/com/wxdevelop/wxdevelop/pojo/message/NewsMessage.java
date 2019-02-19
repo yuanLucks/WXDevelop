@@ -1,6 +1,8 @@
-package com.wxdevelop.wxdevelop.pojo;
+package com.wxdevelop.wxdevelop.pojo.message;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.wxdevelop.wxdevelop.pojo.message.Article;
+import com.wxdevelop.wxdevelop.pojo.message.BaseMessage;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -17,14 +19,14 @@ import java.util.Map;
 public class NewsMessage extends BaseMessage {
 
     @XStreamAlias("ArticleCount")
-    private String articleCount;
+    private int articleCount;
     @XStreamAlias("Articles")
     private List<Article> articles = new ArrayList<Article>();
 
-    public NewsMessage(Map<String,String> requestMap,String articleCount,List<Article> articles){
+    public NewsMessage(Map<String,String> requestMap,List<Article> articles){
         super(requestMap);
         this.setMsgType("news");
-        this.articleCount = articleCount;
+        this.articleCount = articles.size();
         this.articles = articles;
     }
 }

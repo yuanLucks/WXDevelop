@@ -1,4 +1,4 @@
-package com.wxdevelop.wxdevelop.pojo;
+package com.wxdevelop.wxdevelop.pojo.message;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import lombok.Data;
@@ -12,7 +12,7 @@ import java.util.Map;
  */
 @Data
 @XStreamAlias("xml")
-public class MusicMessage extends BaseMessage{
+public class MusicMessage extends BaseMessage {
 
     @XStreamAlias("Music")
    private Music music;

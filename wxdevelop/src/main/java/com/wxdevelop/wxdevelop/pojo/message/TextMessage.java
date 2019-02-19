@@ -1,6 +1,7 @@
-package com.wxdevelop.wxdevelop.pojo;
+package com.wxdevelop.wxdevelop.pojo.message;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.wxdevelop.wxdevelop.pojo.message.BaseMessage;
 import lombok.Data;
 
 import java.util.Map;
