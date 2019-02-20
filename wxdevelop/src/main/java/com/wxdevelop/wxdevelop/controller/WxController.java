@@ -84,7 +84,7 @@ public class WxController {
     }
 
 
-    @PostConstruct
+
     public void asdasd(){
         System.out.println("加载执行了我！！");
         MeumService meumService = new MeumService();
